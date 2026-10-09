@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Protik Kumar Paul, Ph.D.</title>
-<meta name="description" content="Postdoctoral researcher in secure multiparty computation, zero-knowledge proofs and privacy-preserving systems at TU Darmstadt.">
+<meta name="description" content="Postdoctoral researcher in secure multiparty computation, zero-knowledge proofs and privacy-preserving systems at the University of Tartu.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
 <style>
-  :root { --bg:#e6edf1; --ink:#17232e; --muted:#4d5f6d; --accent:#f0b429; --teal:#1d5a63; --line:#b9c8d1; }
+  :root { --bg:#e6edf1; --ink:#17232e; --muted:#4d5f6d; --accent:#f0b429; --teal:#1d5a63; --line:#b9c8d1; --c-sp:#1f5fa8; --c-asia:#8a3f9e; --c-pets:#2f7a3a; }
   @media (prefers-color-scheme: dark) {
-    :root { --bg:#111c24; --ink:#e8eff3; --muted:#9db0bd; --teal:#7cc4cc; --line:#2c3f4c; }
+    :root { --bg:#111c24; --ink:#e8eff3; --muted:#9db0bd; --teal:#7cc4cc; --line:#2c3f4c; --c-sp:#7fb2ee; --c-asia:#c79ae0; --c-pets:#7fcf8b; }
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -46,7 +46,10 @@
   .when { color:var(--muted); font-size:.95rem; padding-top:.15rem; }
   .list h3 { margin:0; font-size:1.1rem; line-height:1.35; }
   .list p { margin:.3rem 0 0; color:var(--muted); font-size:1rem; }
-  .venue { color:var(--ink); font-weight:600; }
+  .venue { font-weight:600; }
+  .v-sp { color:var(--c-sp); }
+  .v-asia { color:var(--c-asia); }
+  .v-pets { color:var(--c-pets); }
   .tag { font-size:.85rem; color:var(--muted); }
   @media (max-width:34rem) { .list > li { grid-template-columns:1fr; gap:.25rem; } }
 
@@ -70,14 +73,14 @@
   <main>
     <div class="hero">
       <h1>Protik Kumar Paul</h1>
-      <p class="role">Postdoctoral researcher in cryptography at the Encrypto Group, TU Darmstadt. <span>I build secure multiparty computation and zero-knowledge protocols that hold up in practice.</span></p>
+      <p class="role">Postdoctoral researcher in the Zero-Knowledge Group at the University of Tartu. <span>I build secure multiparty computation and zero-knowledge protocols that hold up in practice.</span></p>
     </div>
 
     <section id="research">
       <h2>Research</h2>
       <p>My research covers secure multiparty computation (MPC), zero-knowledge (ZK) proofs, private function evaluation (PFE) and privacy-preserving frameworks.</p>
       <p>I design efficient protocols under demanding adversarial models and turn them into working systems. I developed the Asterisk and QuickPool frameworks, and I work in C++ with EMP-toolkit and ABY.</p>
-      <p>I'm currently co-supervising a PhD student on authenticated private function evaluation. I also supervised an M.Tech student on fair, helper-aided MPC with cheater identification, together with Dr. Divya Ravi (University of Amsterdam).</p>
+      <p>At TU Darmstadt, I co-supervised a PhD student on authenticated private function evaluation. I also supervised an M.Tech student on fair, helper-aided MPC with cheater identification, together with Dr. Divya Ravi (University of Amsterdam).</p>
     </section>
 
     <section id="publications">
@@ -87,7 +90,7 @@
           <span class="when">2026</span>
           <div>
             <h3>Breaking the Barrier for Asynchronous MPC with a Friend</h3>
-            <p>B. Karmakar, A. Kate, S. Patil, A. Patra, S. Patranabis, <b>P. K. Paul</b>, D. Ravi.<br><span class="venue">IEEE Symposium on Security and Privacy (S&amp;P)</span> <span class="tag">Core A*</span></p>
+            <p>B. Karmakar, A. Kate, S. Patil, A. Patra, S. Patranabis, <b>P. K. Paul</b>, D. Ravi.<br><span class="venue v-sp">IEEE Symposium on Security and Privacy (S&amp;P)</span> <span class="tag">(Core A*)</span></p>
           </div>
         </li>
         <li>
@@ -108,7 +111,7 @@
           <span class="when">2024</span>
           <div>
             <h3>Asterisk: Super-fast MPC with a Friend</h3>
-            <p>B. Karmakar, N. Koti, A. Patra, S. Patranabis, <b>P. K. Paul</b>, D. Ravi.<br><span class="venue">IEEE Symposium on Security and Privacy (S&amp;P)</span> <span class="tag">Core A*</span></p>
+            <p>B. Karmakar, N. Koti, A. Patra, S. Patranabis, <b>P. K. Paul</b>, D. Ravi.<br><span class="venue v-sp">IEEE Symposium on Security and Privacy (S&amp;P)</span> <span class="tag">(Core A*)</span></p>
           </div>
         </li>
         <li>
@@ -122,14 +125,14 @@
           <span class="when">2022</span>
           <div>
             <h3>Attaining GOD Beyond Honest Majority With Friends and Foes</h3>
-            <p>A. Hegde, N. Koti, V. B. Kukkala, S. Patil, A. Patra, <b>P. K. Paul</b>.<br><span class="venue">ASIACRYPT</span> <span class="tag">Core A</span></p>
+            <p>A. Hegde, N. Koti, V. B. Kukkala, S. Patil, A. Patra, <b>P. K. Paul</b>.<br><span class="venue v-asia">ASIACRYPT</span> <span class="tag">(Core A)</span></p>
           </div>
         </li>
         <li>
           <span class="when">2022</span>
           <div>
             <h3>How to Prove Any NP Statement Jointly? Efficient Distributed-Prover Zero-Knowledge Protocols</h3>
-            <p>P. Dayama, A. Patra, <b>P. K. Paul</b>, N. Singh, D. Vinayagamurthy.<br><span class="venue">Proceedings on Privacy Enhancing Technologies (PoPETS)</span> <span class="tag">Core A</span></p>
+            <p>P. Dayama, A. Patra, <b>P. K. Paul</b>, N. Singh, D. Vinayagamurthy.<br><span class="venue v-pets">Proceedings on Privacy Enhancing Technologies (PoPETS)</span> <span class="tag">(Core A)</span></p>
           </div>
         </li>
       </ul>
@@ -138,6 +141,7 @@
     <section id="talks">
       <h2>Talks</h2>
       <ul class="list">
+        <li><span class="when">2026</span><div><h3>MPC with a Friend</h3><p>SysteMPC Workshop, Prague, Czech Republic</p></div></li>
         <li><span class="when">June 2024</span><div><h3>Asterisk: Super-fast MPC with a Friend</h3><p>TPMPC 2024, TU Darmstadt, Germany</p></div></li>
         <li><span class="when">May 2024</span><div><h3>Asterisk: Super-fast MPC with a Friend</h3><p>IEEE S&amp;P 2024, San Francisco, USA</p></div></li>
         <li><span class="when">July 2022</span><div><h3>How to prove any NP statement jointly?</h3><p>PETS 2022, Sydney, Australia</p></div></li>
@@ -147,7 +151,8 @@
     <section id="background">
       <h2>Background</h2>
       <ul class="list">
-        <li><span class="when">Nov 2024 – now</span><div><h3>Postdoctoral Researcher</h3><p>Encrypto Group, TU Darmstadt, Germany</p></div></li>
+        <li><span class="when">Oct 2026 – now</span><div><h3>Postdoctoral Researcher</h3><p>Zero-Knowledge Group, University of Tartu, Estonia</p></div></li>
+        <li><span class="when">Nov 2024 – Sep 2026</span><div><h3>Postdoctoral Researcher</h3><p>Encrypto Group, TU Darmstadt, Germany</p></div></li>
         <li><span class="when">2018 – 2024</span><div><h3>Ph.D. in Computer Science</h3><p>Indian Institute of Science (IISc), Bangalore. Advisor: Dr. Arpita Patra. Thesis: <i>Ankora: Notions of Multi-party Computation and Zero-knowledge Beyond Conventional Models.</i></p></div></li>
         <li><span class="when">2019</span><div><h3>Research Intern, Blockchain group</h3><p>IBM IRL, working on zero-knowledge proofs</p></div></li>
         <li><span class="when">2017 – 2018</span><div><h3>Assistant Professor</h3><p>ITER College, SoA University, Bhubaneswar, India. Taught undergraduate Mathematics and Computer Science.</p></div></li>

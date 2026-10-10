@@ -7,7 +7,7 @@
 <meta name="description" content="Postdoctoral researcher in secure multiparty computation, zero-knowledge proofs and privacy-preserving systems at the University of Tartu.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet">
 <style>
   :root { --bg:#e6edf1; --ink:#17232e; --muted:#4d5f6d; --accent:#f0b429; --teal:#1d5a63; --line:#b9c8d1; --c-sp:#1f5fa8; --c-asia:#8a3f9e; --c-pets:#2f7a3a; }
   @media (prefers-color-scheme: dark) {
@@ -28,17 +28,17 @@
   nav a:hover { text-decoration:underline; }
 
   .hero { padding:4rem 0 3.5rem; display:grid; grid-template-columns:1fr auto; gap:2.5rem; align-items:center; }
-  .hero-content h1 { font-size:clamp(3rem, 12vw, 6.5rem); line-height:.95; margin:0; font-weight:800; letter-spacing:-.04em;
+  .hero-content h1 { font-family:"Fraunces", Georgia, "Times New Roman", serif; font-size:clamp(2.75rem, 10vw, 5.25rem); line-height:1; margin:0; font-weight:800; letter-spacing:-.02em;
     background:linear-gradient(transparent 68%, var(--accent) 68% 92%, transparent 92%);
     background-repeat:no-repeat; background-size:100% 100%; display:inline;
     -webkit-box-decoration-break:clone; box-decoration-break:clone; animation:sweep .9s ease-out both; }
   @keyframes sweep { from { background-size:0% 100%; } to { background-size:100% 100%; } }
   .hero .role { font-size:1.4rem; line-height:1.35; margin:2rem 0 0; max-width:34rem; }
   .hero .role span { color:var(--muted); }
-  .profile-pic { width:140px; height:140px; border-radius:50%; object-fit:cover; border:3px solid var(--line); flex-shrink:0; box-shadow:0 8px 24px rgba(0,0,0,0.1); }
+  .profile-pic { width:240px; height:240px; border-radius:50%; object-fit:cover; object-position:50% 35%; border:3px solid var(--line); flex-shrink:0; box-shadow:0 8px 24px rgba(0,0,0,0.1); }
   @media (max-width:40rem) {
     .hero { grid-template-columns:1fr; justify-items:start; }
-    .profile-pic { order:-1; width:120px; height:120px; }
+    .profile-pic { order:-1; width:180px; height:180px; }
   }
 
   section { padding:2.75rem 0; border-top:1px solid var(--line); }
@@ -60,6 +60,26 @@
 
   .contact a.mail { font-size:1.4rem; font-weight:600; overflow-wrap:anywhere; }
   .links { display:flex; flex-wrap:wrap; gap:1.25rem; margin-top:1rem; }
+
+  .tabs { display:flex; flex-wrap:wrap; gap:.5rem; margin:0 0 1.5rem; }
+  .tab { font:inherit; font-weight:600; font-size:.95rem; color:var(--ink); background:transparent; border:2px solid var(--line);
+    border-radius:999px; padding:.4rem 1rem; cursor:pointer; }
+  .tab:hover { border-color:var(--teal); }
+  .tab[aria-selected="true"] { background:var(--accent); border-color:var(--accent); color:#17232e; }
+  .tab:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+  .panel[hidden] { display:none; }
+  .gallery { display:grid; grid-template-columns:repeat(auto-fill, minmax(13rem, 1fr)); gap:1rem; }
+  .gallery figure { margin:0; }
+  .gallery button { display:block; width:100%; padding:0; border:0; background:none; cursor:zoom-in; border-radius:10px; overflow:hidden; }
+  .gallery button:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+  .gallery img { display:block; width:100%; aspect-ratio:4/3; object-fit:cover; transition:transform .25s; }
+  .gallery button:hover img { transform:scale(1.04); }
+  .gallery figcaption { font-size:.9rem; color:var(--muted); margin-top:.4rem; line-height:1.4; }
+  dialog.lightbox { border:0; padding:0; background:transparent; max-width:96vw; max-height:96vh; overflow:visible; }
+  dialog.lightbox::backdrop { background:rgba(8,14,19,.88); }
+  .lightbox img { display:block; max-width:94vw; max-height:84vh; border-radius:8px; margin:0 auto; }
+  .lightbox p { color:#e8eff3; text-align:center; margin:.75rem auto 0; max-width:60ch; font-size:.95rem; }
+  .lightbox .close { position:absolute; top:-2.5rem; right:0; font:inherit; font-weight:600; color:#fff; background:none; border:2px solid #fff; border-radius:999px; padding:.2rem .9rem; cursor:pointer; }
   footer { padding:2rem 0 3rem; color:var(--muted); font-size:.95rem; }
 </style>
 </head>
@@ -71,6 +91,7 @@
       <a href="#publications">Publications</a>
       <a href="#talks">Talks</a>
       <a href="#background">Background</a>
+      <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -172,9 +193,51 @@
       <ul class="list">
         <li><span class="when">Reviewing</span><div><p style="margin:0;color:inherit">External reviewer for CCS, Eurocrypt, USENIX Security (2025, 2026) and WWW.</p></div></li>
         <li><span class="when">2016</span><div><p style="margin:0;color:inherit">CSIR-UGC NET JRF, All India Rank 5 in Mathematical Science.</p></div></li>
-        <li><span class="when">2015</span><div><p style="margin:0;current-color:inherit">IIT-JAM Mathematics, All India Rank 10 out of 7765.</p></div></li>
+        <li><span class="when">2015</span><div><p style="margin:0;color:inherit">IIT-JAM Mathematics, All India Rank 10 out of 7765.</p></div></li>
       </ul>
     </section>
+
+
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="tabs" role="tablist" aria-label="Photo collections">
+        <button class="tab" role="tab" id="tab-all" aria-controls="panel-all" aria-selected="true">All</button>
+        <button class="tab" role="tab" id="tab-defense" aria-controls="panel-defense" aria-selected="false" tabindex="-1">PhD defense</button>
+        <button class="tab" role="tab" id="tab-sp24" aria-controls="panel-sp24" aria-selected="false" tabindex="-1">IEEE S&amp;P 2024</button>
+        <button class="tab" role="tab" id="tab-systempc" aria-controls="panel-systempc" aria-selected="false" tabindex="-1">SysteMPC 2026</button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-all" aria-labelledby="tab-all">
+        <div class="gallery">
+          <figure><button type="button" data-full="gallery/Defense.jpg" data-cap="PhD defense, IISc Bangalore"><img src="gallery/Defense.jpg" alt="Protik presenting at the podium, with a slide on multi-party computation and zero-knowledge" loading="lazy"></button><figcaption>PhD defense, IISc Bangalore</figcaption></figure>
+          <figure><button type="button" data-full="gallery/S_P24.jpg" data-cap="Presenting Asterisk at IEEE S&amp;P 2024, San Francisco"><img src="gallery/S_P24.jpg" alt="Protik presenting the Asterisk title slide to a conference audience" loading="lazy"></button><figcaption>Presenting Asterisk at IEEE S&amp;P 2024, San Francisco</figcaption></figure>
+          <figure><button type="button" data-full="gallery/S_P24_1.jpg" data-cap="Asterisk preprocessing results, IEEE S&amp;P 2024"><img src="gallery/S_P24_1.jpg" alt="Protik presenting a slide on preprocessing performance" loading="lazy"></button><figcaption>Asterisk preprocessing results, IEEE S&amp;P 2024</figcaption></figure>
+          <figure><button type="button" data-full="gallery/SysteMPC.jpg" data-cap="Poster: Multiparty Computation with a Friend, SysteMPC 2026"><img src="gallery/SysteMPC.jpg" alt="Protik standing next to his poster Multiparty Computation with a Friend" loading="lazy"></button><figcaption>Poster: Multiparty Computation with a Friend, SysteMPC 2026</figcaption></figure>
+        </div>
+      </div>
+      <div class="panel" role="tabpanel" id="panel-defense" aria-labelledby="tab-defense" hidden>
+        <div class="gallery">
+          <figure><button type="button" data-full="gallery/Defense.jpg" data-cap="PhD defense, IISc Bangalore"><img src="gallery/Defense.jpg" alt="Protik presenting at the podium, with a slide on multi-party computation and zero-knowledge" loading="lazy"></button><figcaption>PhD defense, IISc Bangalore</figcaption></figure>
+        </div>
+      </div>
+      <div class="panel" role="tabpanel" id="panel-sp24" aria-labelledby="tab-sp24" hidden>
+        <div class="gallery">
+          <figure><button type="button" data-full="gallery/S_P24.jpg" data-cap="Presenting Asterisk at IEEE S&amp;P 2024, San Francisco"><img src="gallery/S_P24.jpg" alt="Protik presenting the Asterisk title slide to a conference audience" loading="lazy"></button><figcaption>Presenting Asterisk at IEEE S&amp;P 2024, San Francisco</figcaption></figure>
+          <figure><button type="button" data-full="gallery/S_P24_1.jpg" data-cap="Asterisk preprocessing results, IEEE S&amp;P 2024"><img src="gallery/S_P24_1.jpg" alt="Protik presenting a slide on preprocessing performance" loading="lazy"></button><figcaption>Asterisk preprocessing results, IEEE S&amp;P 2024</figcaption></figure>
+        </div>
+      </div>
+      <div class="panel" role="tabpanel" id="panel-systempc" aria-labelledby="tab-systempc" hidden>
+        <div class="gallery">
+          <figure><button type="button" data-full="gallery/SysteMPC.jpg" data-cap="Poster: Multiparty Computation with a Friend, SysteMPC 2026"><img src="gallery/SysteMPC.jpg" alt="Protik standing next to his poster Multiparty Computation with a Friend" loading="lazy"></button><figcaption>Poster: Multiparty Computation with a Friend, SysteMPC 2026</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Enlarged photo">
+      <button class="close" type="button" id="lb-close">Close</button>
+      <img id="lb-img" src="" alt="">
+      <p id="lb-cap"></p>
+    </dialog>
 
     <section id="contact" class="contact">
       <h2>Contact</h2>
@@ -189,5 +252,35 @@
 
   <footer>&copy; 2026 Protik Kumar Paul</footer>
 </div>
+<script>
+  // Tabs
+  const tabs = [...document.querySelectorAll('.tab')];
+  function selectTab(tab) {
+    tabs.forEach(t => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', on);
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+    tab.focus();
+  }
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => selectTab(t));
+    t.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') selectTab(tabs[(i + 1) % tabs.length]);
+      if (e.key === 'ArrowLeft') selectTab(tabs[(i - 1 + tabs.length) % tabs.length]);
+    });
+  });
+  // Lightbox
+  const lb = document.getElementById('lightbox');
+  document.querySelectorAll('.gallery button').forEach(b => b.addEventListener('click', () => {
+    document.getElementById('lb-img').src = b.dataset.full;
+    document.getElementById('lb-img').alt = b.querySelector('img').alt;
+    document.getElementById('lb-cap').textContent = b.dataset.cap.replace(/&amp;/g, '&');
+    lb.showModal();
+  }));
+  document.getElementById('lb-close').addEventListener('click', () => lb.close());
+  lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
+</script>
 </body>
 </html>

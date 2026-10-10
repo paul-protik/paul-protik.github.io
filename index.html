@@ -60,6 +60,26 @@
 
   .contact a.mail { font-size:1.4rem; font-weight:600; overflow-wrap:anywhere; }
   .links { display:flex; flex-wrap:wrap; gap:1.25rem; margin-top:1rem; }
+
+  .tabs { display:flex; flex-wrap:wrap; gap:.5rem; margin:0 0 1.5rem; }
+  .tab { font:inherit; font-weight:600; font-size:.95rem; color:var(--ink); background:transparent; border:2px solid var(--line);
+    border-radius:999px; padding:.4rem 1rem; cursor:pointer; }
+  .tab:hover { border-color:var(--teal); }
+  .tab[aria-selected="true"] { background:var(--accent); border-color:var(--accent); color:#17232e; }
+  .tab:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+  .panel[hidden] { display:none; }
+  .gallery { display:grid; grid-template-columns:repeat(auto-fill, minmax(13rem, 1fr)); gap:1rem; }
+  .gallery figure { margin:0; }
+  .gallery button { display:block; width:100%; padding:0; border:0; background:none; cursor:zoom-in; border-radius:10px; overflow:hidden; }
+  .gallery button:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+  .gallery img { display:block; width:100%; aspect-ratio:4/3; object-fit:cover; transition:transform .25s; }
+  .gallery button:hover img { transform:scale(1.04); }
+  .gallery figcaption { font-size:.9rem; color:var(--muted); margin-top:.4rem; line-height:1.4; }
+  dialog.lightbox { border:0; padding:0; background:transparent; max-width:96vw; max-height:96vh; overflow:visible; }
+  dialog.lightbox::backdrop { background:rgba(8,14,19,.88); }
+  .lightbox img { display:block; max-width:94vw; max-height:84vh; border-radius:8px; margin:0 auto; }
+  .lightbox p { color:#e8eff3; text-align:center; margin:.75rem auto 0; max-width:60ch; font-size:.95rem; }
+  .lightbox .close { position:absolute; top:-2.5rem; right:0; font:inherit; font-weight:600; color:#fff; background:none; border:2px solid #fff; border-radius:999px; padding:.2rem .9rem; cursor:pointer; }
   footer { padding:2rem 0 3rem; color:var(--muted); font-size:.95rem; }
 </style>
 </head>
@@ -71,6 +91,7 @@
       <a href="#publications">Publications</a>
       <a href="#talks">Talks</a>
       <a href="#background">Background</a>
+      <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -176,6 +197,48 @@
       </ul>
     </section>
 
+
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="tabs" role="tablist" aria-label="Photo collections">
+        <button class="tab" role="tab" id="tab-all" aria-controls="panel-all" aria-selected="true">All</button>
+        <button class="tab" role="tab" id="tab-defense" aria-controls="panel-defense" aria-selected="false" tabindex="-1">PhD defense</button>
+        <button class="tab" role="tab" id="tab-sp24" aria-controls="panel-sp24" aria-selected="false" tabindex="-1">IEEE S&amp;P 2024</button>
+        <button class="tab" role="tab" id="tab-systempc" aria-controls="panel-systempc" aria-selected="false" tabindex="-1">SysteMPC 2026</button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-all" aria-labelledby="tab-all">
+        <div class="gallery">
+          <figure><button type="button" data-full="gallery/Defense.jpg" data-cap="PhD defense, IISc Bangalore"><img src="gallery/Defense.jpg" alt="Protik presenting at the podium, with a slide on multi-party computation and zero-knowledge" loading="lazy"></button><figcaption>PhD defense, IISc Bangalore</figcaption></figure>
+          <figure><button type="button" data-full="gallery/S_P24.jpg" data-cap="Presenting Asterisk at IEEE S&amp;P 2024, San Francisco"><img src="gallery/S_P24.jpg" alt="Protik presenting the Asterisk title slide to a conference audience" loading="lazy"></button><figcaption>Presenting Asterisk at IEEE S&amp;P 2024, San Francisco</figcaption></figure>
+          <figure><button type="button" data-full="gallery/S_P24_1.jpg" data-cap="Asterisk preprocessing results, IEEE S&amp;P 2024"><img src="gallery/S_P24_1.jpg" alt="Protik presenting a slide on preprocessing performance" loading="lazy"></button><figcaption>Asterisk preprocessing results, IEEE S&amp;P 2024</figcaption></figure>
+          <figure><button type="button" data-full="gallery/SysteMPC.jpg" data-cap="Poster: Multiparty Computation with a Friend, SysteMPC 2026"><img src="gallery/SysteMPC.jpg" alt="Protik standing next to his poster Multiparty Computation with a Friend" loading="lazy"></button><figcaption>Poster: Multiparty Computation with a Friend, SysteMPC 2026</figcaption></figure>
+        </div>
+      </div>
+      <div class="panel" role="tabpanel" id="panel-defense" aria-labelledby="tab-defense" hidden>
+        <div class="gallery">
+          <figure><button type="button" data-full="gallery/Defense.jpg" data-cap="PhD defense, IISc Bangalore"><img src="gallery/Defense.jpg" alt="Protik presenting at the podium, with a slide on multi-party computation and zero-knowledge" loading="lazy"></button><figcaption>PhD defense, IISc Bangalore</figcaption></figure>
+        </div>
+      </div>
+      <div class="panel" role="tabpanel" id="panel-sp24" aria-labelledby="tab-sp24" hidden>
+        <div class="gallery">
+          <figure><button type="button" data-full="gallery/S_P24.jpg" data-cap="Presenting Asterisk at IEEE S&amp;P 2024, San Francisco"><img src="gallery/S_P24.jpg" alt="Protik presenting the Asterisk title slide to a conference audience" loading="lazy"></button><figcaption>Presenting Asterisk at IEEE S&amp;P 2024, San Francisco</figcaption></figure>
+          <figure><button type="button" data-full="gallery/S_P24_1.jpg" data-cap="Asterisk preprocessing results, IEEE S&amp;P 2024"><img src="gallery/S_P24_1.jpg" alt="Protik presenting a slide on preprocessing performance" loading="lazy"></button><figcaption>Asterisk preprocessing results, IEEE S&amp;P 2024</figcaption></figure>
+        </div>
+      </div>
+      <div class="panel" role="tabpanel" id="panel-systempc" aria-labelledby="tab-systempc" hidden>
+        <div class="gallery">
+          <figure><button type="button" data-full="gallery/SysteMPC.jpg" data-cap="Poster: Multiparty Computation with a Friend, SysteMPC 2026"><img src="gallery/SysteMPC.jpg" alt="Protik standing next to his poster Multiparty Computation with a Friend" loading="lazy"></button><figcaption>Poster: Multiparty Computation with a Friend, SysteMPC 2026</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Enlarged photo">
+      <button class="close" type="button" id="lb-close">Close</button>
+      <img id="lb-img" src="" alt="">
+      <p id="lb-cap"></p>
+    </dialog>
+
     <section id="contact" class="contact">
       <h2>Contact</h2>
       <p>I'm happy to hear from people working on MPC, zero-knowledge proofs or privacy-preserving systems.</p>
@@ -189,5 +252,35 @@
 
   <footer>&copy; 2026 Protik Kumar Paul</footer>
 </div>
+<script>
+  // Tabs
+  const tabs = [...document.querySelectorAll('.tab')];
+  function selectTab(tab) {
+    tabs.forEach(t => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', on);
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+    tab.focus();
+  }
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => selectTab(t));
+    t.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') selectTab(tabs[(i + 1) % tabs.length]);
+      if (e.key === 'ArrowLeft') selectTab(tabs[(i - 1 + tabs.length) % tabs.length]);
+    });
+  });
+  // Lightbox
+  const lb = document.getElementById('lightbox');
+  document.querySelectorAll('.gallery button').forEach(b => b.addEventListener('click', () => {
+    document.getElementById('lb-img').src = b.dataset.full;
+    document.getElementById('lb-img').alt = b.querySelector('img').alt;
+    document.getElementById('lb-cap').textContent = b.dataset.cap.replace(/&amp;/g, '&');
+    lb.showModal();
+  }));
+  document.getElementById('lb-close').addEventListener('click', () => lb.close());
+  lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
+</script>
 </body>
 </html>
